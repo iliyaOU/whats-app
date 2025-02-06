@@ -1,0 +1,59 @@
+@use "baseColors" as colors;
+
+.contactItem {
+  display: flex;
+  cursor: pointer;
+  height: 72px;
+  align-items: center;
+  padding-right: 15px;
+
+  &:hover {
+    background-color: colors.$background-default-hover;
+  }
+
+  &_active {
+    background-color: colors.$background-default-active;
+  }
+}
+
+.icon {
+  padding: 0 15px;
+  max-width: 49px;
+  max-height: 49px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  flex-grow: 1;
+  overflow: hidden;
+  font-size: 16px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-bottom: 1px solid colors.$border-list;
+  gap: 4px;
+
+  .contactText {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 21px;
+    width: 100%;
+    .title {
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+  .lastMessageDate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+  .lastMessage {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 15px;
+  }
+}

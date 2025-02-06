@@ -1,0 +1,43 @@
+@use 'baseColors' as colors;
+
+.mainWrapper {
+    background-color: colors.$panel-background-lighter;
+    background-repeat: repeat-x;
+    width: 100%;
+    height: 100%;
+    .topStripe {
+        display: none;
+    }
+}
+
+@media not all and (display-mode: standalone) {
+    @media screen and (min-width: 1441px) {
+        .mainWrapper {
+            margin: 0 auto;
+            margin-top: 19px;
+            width: calc(100% - 38px);
+            max-width: 1600px;
+            height: calc(100% - 38px);
+            box-shadow: 0px 6px 18px rgba(colors.$shadow-rgb, .05);
+
+            .topStripe {
+                display: block;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 127px;
+                z-index: -1;
+                background-color: colors.$app-background-stripe;
+            }
+        }
+    }
+}
+
+.mainBlock {
+    background: yellow;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+}

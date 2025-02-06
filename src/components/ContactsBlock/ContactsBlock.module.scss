@@ -1,0 +1,54 @@
+@use 'baseColors' as colors;
+
+.contactsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contactsHeader {
+    display: flex;
+    align-items: center;
+    height: 64px;
+    padding-left: 16px;
+    padding-right: 10px;
+
+    .icons {
+        display: flex;
+        gap: 10px;
+    }
+}
+
+.searchLine {
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    height: 44px;
+}
+
+.badgesLine {
+    padding-left: 12px;
+    padding-bottom: 7px;
+    padding-top: 2px;
+    column-gap: 8px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contactsBlock {
+    background-color: colors.$panel-background-lighter;
+    position: relative;
+
+    @media screen and (min-width: 1300px) {
+            flex: 0 0 30%;
+            max-width: 30%;
+    }
+    @media screen and (min-width: 1024px) and (max-width: 1300px) {
+            flex: 0 0 40%;
+            max-width: 40%;
+    }
+    @media screen and (max-width: 900px) {
+            flex: 0 0 45%;
+            max-width: 45%;
+    }
+}

@@ -1,0 +1,9 @@
+@use "baseColors" as colors;
+
+.messageBlock {
+  width: 100%;
+  background-color: colors.$panel-background-lighter;
+  user-select: none;
+  border-left: 1px solid colors.$conversation-header-border;
+  display: flex;
+}

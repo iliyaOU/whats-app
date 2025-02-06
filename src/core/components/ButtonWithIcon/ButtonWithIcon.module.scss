@@ -1,0 +1,19 @@
+@use 'baseColors' as colors;
+
+.buttonWithIcon {
+    border: none;
+    padding: 8px;
+    background: transparent;
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.active {
+    background-color: colors.$menu-bar-item-background-active;
+    border-radius: 50%;
+}
