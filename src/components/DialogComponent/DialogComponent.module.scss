@@ -1,0 +1,36 @@
+@use "baseColors" as colors;
+
+.dialogWrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .header {
+    height: 50px;
+    background: colors.$panel-header-background;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+  }
+
+  .messages {
+    padding-top: 50px;
+    overflow: auto;
+    flex-grow: 1;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .inputWrapper {
+    padding: 0 22px;
+  }
+  .input {
+    width: 100%;
+    height: 50px;
+  }
+}

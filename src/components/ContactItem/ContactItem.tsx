@@ -10,8 +10,8 @@ type Props = {
   title: string;
   lastMessage: string;
   lastMessageDate: string;
-  dialogId: number | null;
-  onClick?: (dialogId: number) => void;
+  dialogId: string | null;
+  onClick?: (dialogId: string) => void;
 };
 
 function ContactItem({ title, lastMessage, lastMessageDate, dialogId }: Props) {

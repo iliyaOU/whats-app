@@ -1,0 +1,44 @@
+@use "baseColors" as colors;
+
+.messageWrapper {
+  position: relative;
+
+  &.out {
+    display: flex;
+    justify-content: end;
+  }
+
+  .messageDecor {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 8px;
+    height: 13px;
+    z-index: 3;
+    display: inline-block;
+    &.in {
+      left: -3px;
+      border-top-left-radius: 0px;
+      background-color: colors.$incoming-background;
+      transform: rotate(45deg); /* Поворачиваем треугольник на 45 градусов */
+    }
+    &.out {
+      right: -3px;
+      border-top-right-radius: 0px;
+      background-color: colors.$outgoing-background;
+    }
+  }
+
+  .message {
+    display: inline-block;
+    padding: 5px 11px;
+    z-index: 200;
+
+    &.in {
+      background-color: colors.$incoming-background;
+    }
+    &.out {
+      background-color: colors.$outgoing-background;
+    }
+  }
+}

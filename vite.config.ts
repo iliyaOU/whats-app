@@ -11,6 +11,7 @@ export default defineConfig({
       components: path.resolve(path.dirname(""), "./src/components"),
       colors: path.resolve(path.dirname(""), "./src/core/colors"),
       images: path.resolve(path.dirname(""), "./src/core/images"),
+      queries: path.resolve(path.dirname(""), "./src/core/queries"),
       generalStyles: path.resolve(
         path.dirname(""),
         "./src/core/styles/general.module.scss"

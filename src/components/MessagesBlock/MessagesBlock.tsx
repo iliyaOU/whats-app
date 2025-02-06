@@ -1,13 +1,15 @@
 import EmptyDialog from "components/EmptyDialog/EmptyDialog";
 import styles from "./Messages.module.scss";
-type Props = {
-  dialogId?: string;
-};
+import { useContext } from "react";
+import DialogContext from "core/context/DialogContext";
+import DialogComponent from "components/DialogComponent/DialogComponent";
 
-function MessagesBlock({ dialogId }: Props) {
+function MessagesBlock() {
+  const { dialogId } = useContext(DialogContext);
+
   return (
     <div className={styles.messageBlock}>
-      {dialogId ? <></> : <EmptyDialog />}
+      {dialogId ? <DialogComponent /> : <EmptyDialog />}
     </div>
   );
 }
