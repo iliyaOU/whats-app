@@ -5,13 +5,12 @@ import ShortDropdownIcon from "icons/short-dropdown-icon.svg";
 import generalStyles from "generalStyles";
 import styles from "./ContactsBlock.module.scss";
 import SearchInput from "core/components/SearchInput/SearchInput";
-import { ChangeEvent, useContext, useState } from "react";
+import { ChangeEvent, KeyboardEvent, useContext, useState } from "react";
 import Badge from "components/Badge/Badge";
 import ContactItem from "components/ContactItem/ContactItem";
 import Button from "core/components/Button/Button";
 import { cx } from "@emotion/css";
 
-import queries from "queries";
 import DialogsContext from "core/context/DialogsContext";
 import DialogContext from "core/context/DialogContext";
 
@@ -19,7 +18,7 @@ function ContactsBlock() {
   const [search, setSearch] = useState<null | string>(null);
   const [phoneNumber, setPhoneNumber] = useState("");
   const [isEnterPhone, setIsEnterPhone] = useState(false);
-  const { addDialog, dialogs } = useContext(DialogsContext);
+  const { dialogs, addDialog } = useContext(DialogsContext);
   const { changeDialogId } = useContext(DialogContext);
 
   const handleSearch = (newValue: string) => {
@@ -28,6 +27,19 @@ function ContactsBlock() {
 
   const handleChangePhoneNumber = (e: ChangeEvent<HTMLInputElement>) => {
     setPhoneNumber(e.target.value);
+  };
+
+  const handleCreateChat = () => {
+    addDialog({
+      dialogId: `${phoneNumber}@c.us`,
+      phoneNumber,
+    });
+    changeDialogId(`${phoneNumber}@c.us`);
+    setPhoneNumber("");
+  };
+
+  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key.toLocaleLowerCase() === "enter") handleCreateChat();
   };
 
   return (
@@ -41,19 +53,9 @@ function ContactsBlock() {
                 placeholder="Телефонный номер"
                 value={phoneNumber}
                 onChange={handleChangePhoneNumber}
+                onKeyDown={handleKeyDown}
               />
-              <Button
-                onClick={() => {
-                  addDialog({
-                    lastMessage: "",
-                    dialogId: `${phoneNumber}@c.us`,
-                    phoneNumber,
-                  });
-                  changeDialogId(`${phoneNumber}@c.us`);
-                }}
-              >
-                Создать чат
-              </Button>
+              <Button onClick={handleCreateChat}>Создать чат</Button>
             </div>
           ) : (
             <h1>Чаты</h1>
@@ -84,9 +86,9 @@ function ContactsBlock() {
           <div className={styles.contacts}>
             {dialogs.map((dialog) => (
               <ContactItem
+                key={dialog.dialogId}
                 title={dialog.phoneNumber}
-                lastMessage=""
-                lastMessageDate="Вчера"
+                lastMessageDate="Сейчас"
                 dialogId={dialog.dialogId}
               />
             ))}
