@@ -25,3 +25,9 @@ export type NotificationResponse = {
     sendByApi: boolean;
   };
 };
+
+export type ApiCredentials = {
+  url?: string;
+  token_instance?: string;
+  id_instance?: string;
+};

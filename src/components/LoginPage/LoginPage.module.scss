@@ -1,0 +1,38 @@
+.loginPage {
+  width: 30%;
+  height: 500px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 150px;
+  border-radius: 15px;
+  h2 {
+    text-align: center;
+  }
+  .loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-grow: 1;
+    .formInputs {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      .formInput {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 0 16px;
+      }
+    }
+    .submitButton {
+      cursor: pointer;
+      height: 40px;
+      margin-left: 16px;
+      margin-right: 16px;
+      border: none;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+  }
+}

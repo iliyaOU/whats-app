@@ -3,12 +3,13 @@ import styles from "./DialogComponent.module.scss";
 import DialogContext from "core/context/DialogContext";
 import Message from "components/Message/Message";
 import AllDialogsContext from "core/context/AllDialogsContentext";
-import api from "core/api/api";
+import ApiContext from "core/context/ApiCredentialsContext";
 
 function DialogComponent() {
   const { dialogId } = useContext(DialogContext);
   const { allDialogs, addMessageToChat } = useContext(AllDialogsContext);
   const [messageString, setMessageString] = useState("");
+  const { api } = useContext(ApiContext);
 
   const messages = allDialogs[dialogId as string] || [];
 
