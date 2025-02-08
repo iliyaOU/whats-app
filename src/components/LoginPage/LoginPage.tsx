@@ -28,6 +28,7 @@ function LoginPage({ setApiCredentials }: Props) {
               placeholder="API_URL"
               value={formFields.url}
               onChange={(e) => handleChangeField("url", e.target.value)}
+              type="password"
             />
           </div>
           <div className={styles.formInput}>
@@ -38,6 +39,7 @@ function LoginPage({ setApiCredentials }: Props) {
               onChange={(e) =>
                 handleChangeField("token_instance", e.target.value)
               }
+              type="password"
             />
           </div>
           <div className={styles.formInput}>
@@ -46,6 +48,7 @@ function LoginPage({ setApiCredentials }: Props) {
               value={formFields.id_instance}
               placeholder="ID_INSTANCE"
               onChange={(e) => handleChangeField("id_instance", e.target.value)}
+              type="password"
             />
           </div>
         </div>

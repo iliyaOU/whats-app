@@ -28,4 +28,9 @@ export default defineConfig({
       include: "**/*.svg",
     }),
   ],
+  build: {
+    outDir: "./build",
+    emptyOutDir: true, // also necessary
+  },
+  base: "/iliyaOU/whats-app.git",
 });
