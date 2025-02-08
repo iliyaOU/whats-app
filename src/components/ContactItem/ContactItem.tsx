@@ -18,7 +18,7 @@ function ContactItem({ title, lastMessageDate, dialogId }: Props) {
   const { dialogId: currentDialogId, changeDialogId } =
     useContext(DialogContext);
   const { allDialogs } = useContext(AllDialogsContext);
-  const currentDialogMessages = allDialogs[String(currentDialogId)];
+  const currentDialogMessages = allDialogs[String(dialogId)];
 
   const handleClick = () => {
     if (!isNull(dialogId)) {
